@@ -6,6 +6,8 @@ module.exports = {
 	  //? '/cklotte27.github.io/'
 	  //: '/',
     //outputDir: 'docs'
+	publicPath: '/cklotte27.github.io',
+	outputDir: 'docs'
 
  }   
 }
