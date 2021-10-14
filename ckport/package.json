@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-	"dev": "--host 0.0.0.0 --disableHostCheck true --open --hot"
+    "dev": "--host 0.0.0.0 --disableHostCheck true --open --hot"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -19,7 +19,10 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "stylus": "^0.55.0",
+    "stylus-loader": "^6.2.0",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.46.0"
   },
   "eslintConfig": {
     "root": true,
@@ -33,7 +36,10 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-mixed-spaces-and-tabs": 0,
+      "no-unused-labels": 0
+    }
   },
   "browserslist": [
     "> 1%",
