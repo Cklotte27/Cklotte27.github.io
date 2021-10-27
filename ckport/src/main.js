@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-//import Home from './pages/Home.vue'
-//import Education from './pages/Education.vue'
+import router from './router'
 
 Vue.config.productionTip = false
 
@@ -11,5 +10,6 @@ Vue.config.productionTip = false
 }*/
 
 new Vue({
-  render: h => h(App),
+  	render: h => h(App),
+	router
 }).$mount('#app')

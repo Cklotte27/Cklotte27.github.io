@@ -1,14 +1,14 @@
 <template>
 	<div id="app">
 		<Header></Header>
-		<span style="color: white;">Education</span>
+		<span style="color: white;">Work Experience</span>
 	</div>
 </template>
 
 <script>
 	import Header from '../components/header/Header.vue';
 	export default {
-		name: 'Education',
+		name: 'WorkExperience',
 		components: {
 			Header,
 		},

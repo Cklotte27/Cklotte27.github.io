@@ -1,19 +1,20 @@
 <template>
-	<div id="app">
+	<div id="Home">
 		<Header></Header>
-		<span>Home</span>
+		<span style="color: white;">Home</span>
 	</div>
 </template>
 
 <script>
 	import Header from '../components/header/Header.vue';
 	export default {
-		name: 'App',
+		name: 'Home',
 		components: {
 			Header,
 		},
 		created: function(){
-			//console.log(this);
+			console.log(this);
+			console.log("Homes")
 		}
 	};
 </script>
@@ -22,7 +23,7 @@
 	html, body {
 		margin: 0;
 	}
-	#app {
+	#Home {
 		font-family: Avenir, Helvetica, Arial, sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
