@@ -14,11 +14,13 @@
 </script>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+	
 	html, body {
 		margin: 0;
 	}
 	#app {
-		font-family: Avenir, Helvetica, Arial, sans-serif;
+		font-family: Aclonica;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
