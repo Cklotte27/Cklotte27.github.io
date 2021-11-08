@@ -1,16 +1,13 @@
 <template>
 	<div id="Home">
-		<Header></Header>
 		<span style="color: white;">Home</span>
 	</div>
 </template>
 
 <script>
-	import Header from '../components/header/Header.vue';
 	export default {
 		name: 'Home',
 		components: {
-			Header,
 		},
 		created: function(){
 			console.log(this);
@@ -19,9 +16,9 @@
 	};
 </script>
 
-<style>
+<style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
-	
+	@import "../assets/scss/_variables.scss";
 	html, body {
 		margin: 0;
 	}
@@ -31,7 +28,6 @@
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
 		color: #2c3e50;
-		background-color: #192231;
 		height: 100vh;
 	}
 </style>

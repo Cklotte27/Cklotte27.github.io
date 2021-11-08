@@ -1,16 +1,13 @@
 <template>
 	<div id="app">
-		<Header></Header>
 		<span>Not Found 404</span>
 	</div>
 </template>
 
 <script>
-	import Header from '../components/header/Header.vue';
 	export default {
 		name: 'App',
 		components: {
-			Header,
 		},
 		created: function(){
 			//console.log(this);

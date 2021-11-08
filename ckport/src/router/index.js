@@ -13,6 +13,7 @@ const router = new VueRouter({
   mode: 'history',
   routes: [
     { 
+	  name: 'Home',
       path: '/', 
       component: Home,
       //beforeEnter: requireAuth

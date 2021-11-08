@@ -1,0 +1,29 @@
+// generic color theme
+$color-generic_dark: #192231;
+$color-generic_darkblue: #024C63;
+$color-generic_blue: #007B85;
+$color-generic_deepgreen: #12AA8C;
+$color-generic_lightgreen: #87D67D;
+$color-generic_yellow: #F9F871;
+
+
+//text color theme
+
+$color-text_light: #DFF1FF;
+$color-text_dark: #192231;
+$color-text_gray: #454E5F;
+$color-text_gold: #DBA21C;
+$color-text_purple: #8E7797;
+
+//gradient blue - brown - black
+
+$gradient-main-NE: linear-gradient(to right top, #494e6b, #5b5772, #6c6178, #7b6c7e, #887785, #837380, #7d6f7c, #786b77, #605765, #484454, #303342, #192231);
+$gradient-main-NW: linear-gradient(to left top, #494e6b, #5b5772, #6c6178, #7b6c7e, #887785, #837380, #7d6f7c, #786b77, #605765, #484454, #303342, #192231);
+$gradient-main-E: linear-gradient(to right, #494e6b, #5b5772, #6c6178, #7b6c7e, #887785, #837380, #7d6f7c, #786b77, #605765, #484454, #303342, #192231);
+$gradient-main-SE: linear-gradient(to right bottom, #494e6b, #5b5772, #6c6178, #7b6c7e, #887785, #837380, #7d6f7c, #786b77, #605765, #484454, #303342, #192231);
+$gradient-main-S: linear-gradient(to bottom, #494e6b, #5b5772, #6c6178, #7b6c7e, #887785, #837380, #7d6f7c, #786b77, #605765, #484454, #303342, #192231);
+$gradient-main-SW: linear-gradient(to left bottom, #494e6b, #5b5772, #6c6178, #7b6c7e, #887785, #837380, #7d6f7c, #786b77, #605765, #484454, #303342, #192231);
+$gradient-main-W: linear-gradient(to left, #494e6b, #5b5772, #6c6178, #7b6c7e, #887785, #837380, #7d6f7c, #786b77, #605765, #484454, #303342, #192231);
+$gradient-main-N: linear-gradient(to top, #494e6b, #5b5772, #6c6178, #7b6c7e, #887785, #837380, #7d6f7c, #786b77, #605765, #484454, #303342, #192231);
+$gradient-main-circle:  radial-gradient(circle, #494e6b, #5b5772, #6c6178, #7b6c7e, #887785, #837380, #7d6f7c, #786b77, #605765, #484454, #303342, #192231);
+

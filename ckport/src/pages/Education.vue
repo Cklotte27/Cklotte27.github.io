@@ -1,17 +1,14 @@
 <template>
-	<div id="app">
-		<Header></Header>
+	<div class="app">
 		<Dashboard></Dashboard>
 	</div>
 </template>
 
 <script>
-	import Header from '../components/header/Header.vue';
 	import Dashboard from '../components/education/Dashboard.vue';
 	export default {
 		name: 'Education',
 		components: {
-			Header,
 			Dashboard
 		},
 		created: function(){
@@ -32,7 +29,7 @@
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
 		color: #2c3e50;
-		background-color: #192231;
+		background-color: rgba(0, 0, 0, 0);
 		height: 100vh;
 	}
 </style>
