@@ -19,21 +19,25 @@ const router = new VueRouter({
       //beforeEnter: requireAuth
     },
 	{ 
+	  name: 'Education',
       path: '/education', 
       component: Education,
       //beforeEnter: requireAuth
     },
 	{ 
+	  name: 'Work Experience',
       path: '/work_experience', 
       component: WorkExperience,
       //beforeEnter: requireAuth
     },
 	{ 
+      name: 'Personal Life',
       path: '/personal_life', 
       component: PersonalLife,
       //beforeEnter: requireAuth
     },  
     { 
+	  name: 'Not Found',
       path: '*', 
       component: NotFound 
     }

@@ -1,6 +1,6 @@
 <template>
-	<div class="panels">
-		<div class="panel">
+	<div class="panel">
+		<div class="panelContent">
 			<span>Introduction to Computer Science</span>
 		</div>
 	</div>
@@ -31,7 +31,6 @@
 	}
 	.panel{
 		margin-top: 20px;
-		margin-right: 20px;
 		width: 80px;
 		height: 75px;
 		background-color: #494E6B;

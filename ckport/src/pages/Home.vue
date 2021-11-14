@@ -10,8 +10,6 @@
 		components: {
 		},
 		created: function(){
-			console.log(this);
-			console.log("Homes")
 		}
 	};
 </script>

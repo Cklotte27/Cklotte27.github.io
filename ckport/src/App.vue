@@ -24,6 +24,8 @@
 	
 	html, body {
 		margin: 0;
+		padding: 0;
+		overflow: hidden;
 	}
 	
 	* {
@@ -37,11 +39,12 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		background-image: $gradient-main-NE;
+		background-color: $color-generic_dark;
 	}
 	
 	.container {
 		max-width: 1440px;
+		width: 100vw;
 		margin: 0 auto;
 	}
 	
