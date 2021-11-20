@@ -1,7 +1,7 @@
 <template>
 	<div class="app">
 		<Header></Header>
-		<router-view></router-view>	
+		<router-view :mobile="mobile" ></router-view>	
 	</div>
 </template>
 
@@ -12,8 +12,31 @@
 		components: {
 			Header
 		},
+		data: function() {
+			  return {
+				  mobile: null,
+				  windowWidth: null,
+			  }
+		  },
+		 props: {
+		 },
+		 methods: {
+			checkScreenWidth(){
+				 this.windownWidth = window.innerWidth;
+				 if (this.windownWidth <= 750) {
+					 this.mobile = true;
+					 return;
+				 }
+				 this.mobile = false;
+
+				 return;
+			},
+
+		},
 		created: function(){
 			//console.log(this);
+			window.addEventListener('resize', this.checkScreenWidth);
+	  		this.checkScreenWidth();
 		}
 	};
 </script>
@@ -26,6 +49,7 @@
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
+		background-color: $color-generic_dark;
 	}
 	
 	* {
@@ -40,6 +64,8 @@
 		flex-direction: column;
 		min-height: 100vh;
 		background-color: $color-generic_dark;
+		width: 100vw;
+		
 	}
 	
 	.container {

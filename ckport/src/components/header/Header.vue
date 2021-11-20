@@ -130,10 +130,11 @@ export default {
 		padding: 0 14px;
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 		z-index: 99;
-		background-color: $color-text_gray;
+		background-color: $color-generic_dark;
 		position: -webkit-sticky; /* 사파리 브라우저 지원 */
     	position: sticky;
 		top: 0px;
+		margin: auto;
 		
 		.tabTitle{
 			font-weight: 500;

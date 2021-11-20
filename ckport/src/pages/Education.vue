@@ -1,5 +1,15 @@
 <template>
 	<div class="app">
+		<img 
+			 src="../assets/Images/st_olaf_image_crop.jpg" 
+			 class="college_image"
+			 v-show="!mobile"
+		>
+		<img 
+			 src="../assets/Images/st_olaf_image_phone.jpg" 
+			 class="college_image"
+			 v-show="mobile"
+		>
 		<Dashboard></Dashboard>
 	</div>
 </template>
@@ -11,8 +21,14 @@
 		components: {
 			Dashboard
 		},
+		props:{
+			mobile: {
+				type: Boolean,
+				default: false
+			}
+		},
 		created: function(){
-			//console.log(this);
+			console.log(this.mobile);
 		}
 	};
 </script>
@@ -23,13 +39,42 @@
 	html, body {
 		margin: 0;
 	}
-	#app {
-		font-family: Aclonica;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-		background-color: rgba(0, 0, 0, 0);
-		height: 100vh;
+	.college_image{
+		width: 100vw;	
+		height: 500px;
+		position: absolute;
+		z-index: 1;
 	}
+	
+	@media (max-width: 950px){
+		.college_image{
+			height: 400px;
+		}
+	}
+	
+	@media (max-width: 750px){
+		.college_image{
+			height: 350px;
+		}
+	}
+	
+	@media (max-width: 600px){
+		.college_image{
+			height: 300px;
+		}
+	}
+	
+	@media (max-width: 500px){
+		.college_image{
+			height: 270px;
+		}
+	}
+	
+	@media (max-width: 400px){
+		.college_image{
+			height: 200px;
+		}
+	}
+	
+	
 </style>

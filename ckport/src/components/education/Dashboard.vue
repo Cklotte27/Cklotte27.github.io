@@ -68,13 +68,21 @@
 	@import "../../assets/scss/_variables.scss";
 	
 	.dashboardWrapper {
+		max-width: 1440px;
 		width: 100vw;
-		padding: 20px 12px;
+		margin: 0 auto;
+		z-index: 1;
 		
 		.dashboard {
-			border: 4px solid $color-text_light;
-			border-radius: 8px;
-			padding: 20px;
+			width: 800px;
+			margin: 370px auto;
+    		padding: 20px;
+			background: rgba(234, 224, 239, 0.23);
+			border-radius: 16px;
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(10.4px);
+			-webkit-backdrop-filter: blur(10.4px);
+			
 			
 			h1 {
 				font-size: 26px;
@@ -82,10 +90,16 @@
 			}
 		}
 		
+		@media (max-width: 860px) {
+			.dashboard {
+				width: 80%;
+			}
+		}
+		
 		.infoPanel {
-			background-color: $color-generic_white;
 			border-radius: 8px;
 			margin-top: 20px;
+			color: $color-text_light;
 			
 			.panelWrapper{
 				display: flex;
@@ -113,7 +127,7 @@
 		}
 		
 		.panels{
-			display: flex;
+			display: none;
 			flex-wrap: wrap;	
 			justify-content: space-between;
 			
