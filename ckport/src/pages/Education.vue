@@ -3,12 +3,12 @@
 		<img 
 			 src="../assets/Images/st_olaf_image_crop.jpg" 
 			 class="college_image"
-			 v-show="!mobile"
+			 v-show="!$store.state.mobile"
 		>
 		<img 
 			 src="../assets/Images/st_olaf_image_phone.jpg" 
 			 class="college_image"
-			 v-show="mobile"
+			 v-show="$store.state.mobile"
 		>
 		<Dashboard></Dashboard>
 	</div>
@@ -22,13 +22,9 @@
 			Dashboard
 		},
 		props:{
-			mobile: {
-				type: Boolean,
-				default: false
-			}
 		},
 		created: function(){
-			console.log(this.mobile);
+			
 		}
 	};
 </script>

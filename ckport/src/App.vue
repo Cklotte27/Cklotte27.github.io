@@ -1,7 +1,7 @@
 <template>
 	<div class="app">
 		<Header></Header>
-		<router-view :mobile="mobile" ></router-view>	
+		<router-view></router-view>	
 	</div>
 </template>
 
@@ -14,29 +14,21 @@
 		},
 		data: function() {
 			  return {
-				  mobile: null,
+				  mobile: this.$store.state.mobile,
 				  windowWidth: null,
 			  }
 		  },
 		 props: {
 		 },
 		 methods: {
-			checkScreenWidth(){
-				 this.windownWidth = window.innerWidth;
-				 if (this.windownWidth <= 750) {
-					 this.mobile = true;
-					 return;
-				 }
-				 this.mobile = false;
-
-				 return;
-			},
+			checkWindowWithVuex(){
+				this.$store.dispatch('checkMobileDevice')
+			}
 
 		},
 		created: function(){
-			//console.log(this);
-			window.addEventListener('resize', this.checkScreenWidth);
-	  		this.checkScreenWidth();
+			window.addEventListener('resize', this.checkWindowWithVuex);
+			this.checkWindowWithVuex();
 		}
 	};
 </script>
@@ -48,7 +40,7 @@
 	html, body {
 		margin: 0;
 		padding: 0;
-		overflow: hidden;
+		overflow-x: hidden;
 		background-color: $color-generic_dark;
 	}
 	

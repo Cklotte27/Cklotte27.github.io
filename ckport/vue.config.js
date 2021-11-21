@@ -2,6 +2,7 @@ module.exports = {
   	devServer: {
     //compress: true,
 		disableHostCheck: true,
+		overlay: false
 	},
  	
 	

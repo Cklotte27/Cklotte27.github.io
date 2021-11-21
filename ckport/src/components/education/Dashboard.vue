@@ -1,7 +1,7 @@
 <template>
 	<div class="dashboardWrapper">
 		<div class="dashboard">
-			<h1>Educations</h1>
+			<h1>Education</h1>
 			<div class="infoPanel">
 				<div class="panelWrapper">
 					<div class="firstLine">
@@ -9,15 +9,17 @@
 						<span>📍 Northfield, MN</span>
 					</div>
 					<div class="major">
-						<span>Computer Science Major</span>
-						<span> GPA: 3.80</span>
+						<span>BS in Computer Science</span>
+						<span class="gpa"> GPA: 3.80</span>
 					</div>
 					<div class="major">
-						<span>Mathematics Major</span>
-						<span> GPA: 3.90</span>
+						<span>BS in Mathematics </span>
+						<span class="gpa"> GPA: 3.90</span>
 					</div>
-					<span>May 2023</span>
-					<span>Overall GPA: 3.70</span>
+					<div class="lastLine">
+						<span class="date">Graduated: May 2023</span>
+						<span class="overall">Overall GPA: 3.70</span>
+					</div>
 				</div>
 				
 			</div>
@@ -85,14 +87,46 @@
 			
 			
 			h1 {
-				font-size: 26px;
+				font-size: 24px;
 				color: $color-text_light;
+				text-align: center;
+			}
+		}
+		
+		@media (max-width: 950px) {
+			.dashboard {
+				margin: 275px auto;
 			}
 		}
 		
 		@media (max-width: 860px) {
 			.dashboard {
 				width: 80%;
+				margin: 270px auto;
+			}
+		}
+		
+		@media (max-width: 750px) {
+			.dashboard {
+				margin: 230px auto;
+			}
+		}
+		
+		@media (max-width: 600px) {
+			.dashboard {
+				margin: 180px auto;
+			}
+		}
+		
+		@media (max-width: 500px) {
+			.dashboard {
+				margin: 140px auto;
+			}
+		}
+		
+		@media (max-width: 400px) {
+			.dashboard {
+				margin: 130px auto;
 			}
 		}
 		
@@ -105,13 +139,14 @@
 				display: flex;
 				flex-direction: column;
 				text-align: left;
-				padding: 10px;
+				padding: 10px 50px;
+				font-size: 16px;
 				
 				.firstLine {
 					display: flex;
-					justify-content: left;
+					justify-content: space-between;
 					h2 {
-						font-size: 24px;
+						font-size: 20px;
 					}
 					span {
 						vertical-align: middle;
@@ -119,11 +154,23 @@
 					}
 				}
 				
+				.major{
+					display: flex;
+					justify-content: space-between;
+					margin-top: 16px;
+				}
+				
+				.lastLine{
+					display: flex;
+					justify-content: space-between;
+					.date, .overall{
+						margin-top: 22px;
+					}
+				}
+				
+				
 			}
-			
-			.panelWrapper span, .major{
-				margin-top: 8px;
-			}
+		
 		}
 		
 		.panels{

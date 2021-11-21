@@ -4,7 +4,7 @@
 			<div class="logoWrapper">
 				<router-link class="logo" :to="{name: 'Home'}">Cklotte</router-link>
 			</div>
-			<div class="menuWrapper" v-show="!mobile">
+			<div class="menuWrapper" v-show="!$store.state.mobile">
 				<template v-for="(item, i) in headerItems">
 					<router-link 
 						:to="{path:item.path}" 
@@ -21,7 +21,7 @@
 				 alt="menuIcon"
 				 class="menuIcon"
 				 @click="toggleMobileNav"
-				 v-show="mobile"
+				 v-show="$store.state.mobile"
 			/>
 			<transition name="mobile-menu">
 				<div class="mobileMenuWrapper" v-show="mobileNav">
@@ -52,9 +52,8 @@ export default {
   },
   data: function() {
 	  return {
-		  mobile: null,
+		  mobile: this.$store.state.mobile,
 		  mobileNav: null,
-		  windowWidth: null,
 		  headerItems: [
 			{
 				id: 0,
@@ -82,25 +81,13 @@ export default {
   props: {
   },
   methods: {
-	  checkScreenWidth(){
-		  this.windownWidth = window.innerWidth;
-		  if (this.windownWidth <= 750) {
-			  this.mobile = true;
-			  return;
-		  }
-		  this.mobile = false;
-		  this.mobileNav = false;
-
-		  return;
-	  },
-	  
 	  toggleMobileNav() {
 		  this.mobileNav = !this.mobileNav;
 	  },
 	  checkActive(headerItem){
 		  return this.$route.path === headerItem.path ? true : false;
 	  },
-	  checkMobileMenu(el){
+	  checkMobileMenu(el){ //allows user to click out of mobile nav without clicking the menu icon
 		  if(this.mobileNav === true){
 			  if(el.target === window.$('.mobileMenuWrapper')[0] || el.target === window.$('.menuIcon')[0]){
 				  return;
@@ -114,10 +101,7 @@ export default {
 	  }
   },
   created(){
-	  window.addEventListener('resize', this.checkScreenWidth);
 	  document.addEventListener('click', this.checkMobileMenu);
-	  this.checkScreenWidth();
-
   }
 }
 </script>
@@ -216,7 +200,7 @@ export default {
 				flex-direction: column;
 				position: fixed;
 				height: 100%;
-				background-image: $gradient-nav-side;
+				background-color: $color-generic_dark;
 				top: 0;
 				left: 0;
 				border: 1px solid rgb(223, 241, 255);
