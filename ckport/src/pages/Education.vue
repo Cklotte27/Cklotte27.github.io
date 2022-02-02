@@ -37,40 +37,13 @@
 	}
 	.college_image{
 		width: 100vw;	
-		height: 500px;
+		height: 400px;
 		position: absolute;
+		object-fit: cover;
 		z-index: 1;
 	}
 	
-	@media (max-width: 950px){
-		.college_image{
-			height: 400px;
-		}
-	}
 	
-	@media (max-width: 750px){
-		.college_image{
-			height: 350px;
-		}
-	}
-	
-	@media (max-width: 600px){
-		.college_image{
-			height: 300px;
-		}
-	}
-	
-	@media (max-width: 500px){
-		.college_image{
-			height: 270px;
-		}
-	}
-	
-	@media (max-width: 400px){
-		.college_image{
-			height: 200px;
-		}
-	}
 	
 	
 </style>

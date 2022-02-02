@@ -6,19 +6,15 @@
 				<div class="panelWrapper">
 					<div class="firstLine">
 						<h2>St. Olaf College</h2>
-						<span>📍 Northfield, MN</span>
+						<span>📍 Northfield, MN, USA</span>
 					</div>
 					<div class="major">
-						<span>BS in Computer Science</span>
-						<span class="gpa"> GPA: 3.80</span>
-					</div>
-					<div class="major">
-						<span>BS in Mathematics </span>
-						<span class="gpa"> GPA: 3.90</span>
+						<span class="left">Majors: </span>
+						<span class="right"> Computer Science and Mathematics</span>
 					</div>
 					<div class="lastLine">
-						<span class="date">Graduated: May 2023</span>
-						<span class="overall">Overall GPA: 3.70</span>
+						<span class="date">Bachelor of Arts, anticipated in May 2021</span>
+						<span class="overall">Overall GPA: 3.74</span>
 					</div>
 				</div>
 				
@@ -76,8 +72,8 @@
 		z-index: 1;
 		
 		.dashboard {
-			width: 800px;
-			margin: 370px auto;
+			width: 100vw;
+			margin: 72px auto;
     		padding: 20px;
 			background: rgba(234, 224, 239, 0.23);
 			border-radius: 16px;
@@ -93,47 +89,13 @@
 			}
 		}
 		
-		@media (max-width: 950px) {
-			.dashboard {
-				margin: 275px auto;
-			}
-		}
-		
-		@media (max-width: 860px) {
-			.dashboard {
-				width: 80%;
-				margin: 270px auto;
-			}
-		}
-		
-		@media (max-width: 750px) {
-			.dashboard {
-				margin: 230px auto;
-			}
-		}
-		
-		@media (max-width: 600px) {
-			.dashboard {
-				margin: 180px auto;
-			}
-		}
-		
-		@media (max-width: 500px) {
-			.dashboard {
-				margin: 140px auto;
-			}
-		}
-		
-		@media (max-width: 400px) {
-			.dashboard {
-				margin: 130px auto;
-			}
-		}
+
 		
 		.infoPanel {
 			border-radius: 8px;
 			margin-top: 20px;
-			color: $color-text_light;
+			color: $color-generic-dark;
+			font-weight:bold;
 			
 			.panelWrapper{
 				display: flex;
@@ -144,25 +106,39 @@
 				
 				.firstLine {
 					display: flex;
-					justify-content: space-between;
+					justify-content: center;
+					
 					h2 {
+						margin-right: 1rem;
 						font-size: 20px;
+						line-height: 1.4em;
 					}
-					span {
+					span{
+						font-size: 1.1em;
 						vertical-align: middle;
 						margin: 0;
 					}
 				}
 				
 				.major{
-					display: flex;
-					justify-content: space-between;
+					text-align: center;
 					margin-top: 16px;
+					
+					.left{
+						font-size: 1.2em;
+						color: #000;
+						font-weight: bold
+					}
+					.right{
+						margin-left: 1rem;
+						font-size: 1.1em;
+					}
 				}
 				
 				.lastLine{
-					display: flex;
-					justify-content: space-between;
+					margin-top: 22px;
+					text-align: center;
+					display: contents;
 					.date, .overall{
 						margin-top: 22px;
 					}

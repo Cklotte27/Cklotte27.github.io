@@ -57,6 +57,7 @@
 		min-height: 100vh;
 		background-color: $color-generic_dark;
 		width: 100vw;
+		max-width: 1440px;
 		
 	}
 	
