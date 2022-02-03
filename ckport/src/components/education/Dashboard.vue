@@ -1,24 +1,13 @@
 <template>
 	<div class="dashboardWrapper">
-		<div class="dashboard">
-			<h1>Education</h1>
-			<div class="infoPanel">
-				<div class="panelWrapper">
-					<div class="firstLine">
-						<h2>St. Olaf College</h2>
-						<span>📍 Northfield, MN, USA</span>
-					</div>
-					<div class="major">
-						<span class="left">Majors: </span>
-						<span class="right"> Computer Science and Mathematics</span>
-					</div>
-					<div class="lastLine">
-						<span class="date">Bachelor of Arts, anticipated in May 2021</span>
-						<span class="overall">Overall GPA: 3.74</span>
-					</div>
-				</div>
-				
-			</div>
+		<span class="title">Coursework</span>
+		<div class="filterBox">
+			<span class="filterOption CS">Computer <wbr>Science</span>
+			<span class="filterOption M">Mathematics</span>
+			<span class="filterOption GE">General Education</span>
+			<span class="filterOption A">All</span>
+		</div>
+		<div class="panelWrapper">
 			<div class="panels">
 				<Panel key="1"></Panel>
 				<Panel key="2"></Panel>
@@ -70,8 +59,54 @@
 		width: 100vw;
 		margin: 0 auto;
 		z-index: 1;
+		padding: 10px 10px;
 		
-		.dashboard {
+		.title{
+			font-size: 2em;
+			color: #fff;
+			display: inline-block;
+		}
+		
+		.filterBox{
+			background-color: #000;
+			display: flex;
+			justify-content: flex-end;
+			padding: 0 5px;
+			
+			.filterOption{
+				border: 2px solid #fff;
+				font-size: 1.2em;
+				text-align: center;
+				height: 2.9em;
+				display: inline-flex;
+				align-items: center;
+				background-color: #000;
+				min-width: 5em;
+				justify-content: center;
+				padding: 0.3em 0.3em;
+				border-radius: 0.5em;
+				margin: 0 10px;
+			}
+			.CS{
+				max-width: 6.5em;
+				color: #00b4d8;
+			}
+			.M{
+				max-width: 8em;
+				color: #95d5b2;
+			}
+			.GE{
+				max-width: 6.5em;
+				color: #ffcfd2;
+			}
+			.A{
+				max-width: 6em;
+				color: #fdf0d5;
+			}
+		}
+		
+		
+		.top {
 			width: 100vw;
 			margin: 72px auto;
     		padding: 20px;
@@ -89,65 +124,6 @@
 			}
 		}
 		
-
-		
-		.infoPanel {
-			border-radius: 8px;
-			margin-top: 20px;
-			color: $color-generic-dark;
-			font-weight:bold;
-			
-			.panelWrapper{
-				display: flex;
-				flex-direction: column;
-				text-align: left;
-				padding: 10px 50px;
-				font-size: 16px;
-				
-				.firstLine {
-					display: flex;
-					justify-content: center;
-					
-					h2 {
-						margin-right: 1rem;
-						font-size: 20px;
-						line-height: 1.4em;
-					}
-					span{
-						font-size: 1.1em;
-						vertical-align: middle;
-						margin: 0;
-					}
-				}
-				
-				.major{
-					text-align: center;
-					margin-top: 16px;
-					
-					.left{
-						font-size: 1.2em;
-						color: #000;
-						font-weight: bold
-					}
-					.right{
-						margin-left: 1rem;
-						font-size: 1.1em;
-					}
-				}
-				
-				.lastLine{
-					margin-top: 22px;
-					text-align: center;
-					display: contents;
-					.date, .overall{
-						margin-top: 22px;
-					}
-				}
-				
-				
-			}
-		
-		}
 		
 		.panels{
 			display: none;

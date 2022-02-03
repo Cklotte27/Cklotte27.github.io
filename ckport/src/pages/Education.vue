@@ -10,15 +10,18 @@
 			 class="college_image"
 			 v-show="$store.state.mobile"
 		>
+		<Top></Top>
 		<Dashboard></Dashboard>
 	</div>
 </template>
 
 <script>
+	import Top from '../components/education/Top.vue';
 	import Dashboard from '../components/education/Dashboard.vue';
 	export default {
 		name: 'Education',
 		components: {
+			Top,
 			Dashboard
 		},
 		props:{
