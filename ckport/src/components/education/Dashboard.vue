@@ -5,14 +5,17 @@
 			<span class="filterOption CS">Computer <wbr>Science</span>
 			<span class="filterOption M">Mathematics</span>
 			<span class="filterOption GE">General Education</span>
-			<span class="filterOption A">All</span>
+			<span @click="toggleFilterSelection($event)" class="filterOption A selected">All</span>
 		</div>
 		<div class="panelWrapper">
 			<div class="panels">
-				<Panel key="1"></Panel>
-				<Panel key="2"></Panel>
-				<Panel key="3"></Panel>
-				<Panel key="4"></Panel>
+				<Panel
+					:title="item.title"
+					:tag="item.tag"
+					v-for="(item, index) in classes"
+					:key="index"
+				>
+				</Panel>
 			</div>
 		</div>
 	</div>
@@ -29,24 +32,129 @@
 			return {
 				classes: [
 					{
-						title: "Introduction to Computer Science",
+						title: "Computer Science for science/math",
+						tag: "CS, M"
 					},
 					{
-						title: "Algorithms and Data Structure",
+						title: " Ethical Issues in Software Design",
+						tag: "CS"
 					},
 					{
 						title: "Hardware Design",
+						tag: "CS"
 					},
 					{
 						title: "Software Design",
-					}
+						tag: "CS"
+					},
+					{
+						title: "Programming Languages",
+						tag: "CS"
+					},
+					{
+						title: "Algorithms and Data Structures",
+						tag: "CS"
+					},
+					{
+						title: "Calculus I",
+						tag: "M"
+					},
+					{
+						title: "Calculus II",
+						tag: "M"
+					},
+					{
+						title: "Linear Algebra",
+						tag: "M"
+					},
+					{
+						title: "Multivariable Calculus",
+						tag: "M"
+					},
+					{
+						title: "Real Analysis",
+						tag: "M"
+					},
+					{
+						title: "Modern Computational Math",
+						tag: "M, CS"
+					},
+					{
+						title: "Differential Equations",
+						tag: "M"
+					},
+					{
+						title: "Complex Analysis",
+						tag: "M"
+					},
+					{
+						title: "Statistics for Science",
+						tag: "CS"
+					},
+					{
+						title: " Introduction to Data Science",
+						tag: "CS, M"
+					},
+					{
+						title: "Integrated Chem/Bio I + Lab",
+						tag: "GE"
+					},
+					{
+						title: "Integrated Chem/Bio II + Lab",
+						tag: "GE"
+					},
+					{
+						title: "First-Year Writing",
+						tag: "GE"
+					},
+					{
+						title: "Bible/Culture/Commun",
+						tag: "GE"
+					},
+					{
+						title: "Philosophical Theology",
+						tag: "GE"
+					},
+					{
+						title: "Intro to Theater",
+						tag: "GE"
+					},
+					{
+						title: "Beginning Swimming",
+						tag: "GE"
+					},
+					{
+						title: "Principles of Psychology",
+						tag: "GE"
+					},
+					{
+						title: "African Literature",
+						tag: "GE"
+					},
+					{
+						title: "Management",
+						tag: "GE"
+					},
 				]
 			}
 		},
 		props: {
 		},
+		methods:{
+			toggleFilterSelection: function(event){
+				console.log(event.target.classList);
+				if(event.target.classList.contains("selected")){
+					console.log("yes")
+					var index = event.target.classList.indexOf("selected");
+					event.target.classList.splice(index,1);
+					console.log(event.target.classList);
+				}else{
+					console.log("no")
+				}
+			}
+		},
 		created: function(){
-			//console.log(this);
+			//console.log(this.classes.map(x=>x.title));
 		}
 	};
 </script>
@@ -86,59 +194,57 @@
 				padding: 0.3em 0.3em;
 				border-radius: 0.5em;
 				margin: 0 10px;
+				cursor: pointer;
 			}
 			.CS{
 				max-width: 6.5em;
 				color: #00b4d8;
+				&.selected{
+					border: 2px solid #fff;
+					color: #000;
+					background-color: #00b4d8;
+				}
 			}
 			.M{
 				max-width: 8em;
 				color: #95d5b2;
+				&.selected{
+					border: 2px solid #fff;
+					color: #000;
+					background-color: #95d5b2;
+				}
 			}
 			.GE{
 				max-width: 6.5em;
 				color: #ffcfd2;
+				&.selected{
+					border: 2px solid #fff;
+					color: #000;
+					background-color: #ffcfd2;
+				}
 			}
 			.A{
 				max-width: 6em;
 				color: #fdf0d5;
-			}
-		}
-		
-		
-		.top {
-			width: 100vw;
-			margin: 72px auto;
-    		padding: 20px;
-			background: rgba(234, 224, 239, 0.23);
-			border-radius: 16px;
-			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-			backdrop-filter: blur(10.4px);
-			-webkit-backdrop-filter: blur(10.4px);
-			
-			
-			h1 {
-				font-size: 24px;
-				color: $color-text_light;
-				text-align: center;
-			}
-		}
-		
-		
-		.panels{
-			display: none;
-			flex-wrap: wrap;	
-			justify-content: space-between;
-			
-			.panel{
-				.panel span{
-					font-size: 12px;
-					color: #fff;
-					display: table-cell;
-					vertical-align: middle;
+				&.selected{
+					border: 2px solid #fff;
+					color: #000;
+					background-color: #fdf0d5;
 				}
 			}
 		}
+		
+		.panelWrapper{
+			padding: 0 20px;
+			margin: 20px 0;
+			
+			.panels{
+				display: flex;
+				flex-wrap: wrap;	
+				justify-content: flex-start;
+			}
+		}
+		
 		
 	}
 	

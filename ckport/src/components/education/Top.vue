@@ -17,41 +17,19 @@
 						<span class="overall">Overall GPA: 3.74</span>
 					</div>
 				</div>
-				
-			</div>
-			<div class="panels">
-				<Panel key="1"></Panel>
-				<Panel key="2"></Panel>
-				<Panel key="3"></Panel>
-				<Panel key="4"></Panel>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-	import Panel from './Panel.vue';
 	export default {
 		name: 'Top',
 		components: {
-			Panel
 		},
 		data: function() {
 			return {
-				classes: [
-					{
-						title: "Introduction to Computer Science",
-					},
-					{
-						title: "Algorithms and Data Structure",
-					},
-					{
-						title: "Hardware Design",
-					},
-					{
-						title: "Software Design",
-					}
-				]
+
 			}
 		},
 		props: {
@@ -146,21 +124,6 @@
 				
 			}
 		
-		}
-		
-		.panels{
-			display: none;
-			flex-wrap: wrap;	
-			justify-content: space-between;
-			
-			.panel{
-				.panel span{
-					font-size: 12px;
-					color: #fff;
-					display: table-cell;
-					vertical-align: middle;
-				}
-			}
 		}
 		
 	}
