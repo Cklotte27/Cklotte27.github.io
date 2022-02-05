@@ -60,8 +60,8 @@
 		margin-top: 20px;
 		width: 200px;
 		height: 100px;
-		background-color: #494E6B;
-		padding: 8px;
+		background-color: #2a3245;
+		padding: 8px 15px;
 		border-radius: 10px;
 		display: table;
 		
@@ -75,7 +75,7 @@
 			span{
 				font-size: 1em;
 				text-align: center;
-				color: #fff;
+				color: #d6ddee;
 				display: table-cell;
 				vertical-align: middle;
 				word-break: break-word;
@@ -90,6 +90,7 @@
 					padding: 2px 2px;
 					border-radius: 5px;
 					margin-left: 5px;
+					line-height: 13px;
 					&.cs{
 						background-color: #00b4d8;
 						color: #000;
