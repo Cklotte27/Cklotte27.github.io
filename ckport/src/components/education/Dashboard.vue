@@ -1,11 +1,27 @@
 <template>
 	<div class="dashboardWrapper">
 		<span class="title">Coursework</span>
-		<div class="filterBox">
-			<span class="filterOption CS">Computer <wbr>Science</span>
-			<span class="filterOption M">Mathematics</span>
-			<span class="filterOption GE">General Education</span>
-			<span @click="toggleFilterSelection($event)" class="filterOption A selected">All</span>
+		<div class="filterBox" ref="filter">
+			<span 
+				  @click="changeFilter($event)" 
+				  class="filterOption CS" 
+				  data-id="CS" 
+			>Computer <wbr>Science</span>
+			<span 
+				  @click="changeFilter($event)" 
+				  class="filterOption M" 
+				  data-id="M" 
+			>Mathematics</span>
+			<span 
+				  @click="changeFilter($event)" 
+				  class="filterOption GE" 
+				  data-id="GE" 
+			>General Education</span>
+			<span 
+				  @click="changeFilter($event)" 
+				  class="filterOption A selected" 
+				  data-id="A"
+			>All</span>
 		</div>
 		<div class="panelWrapper">
 			<div class="panels">
@@ -14,6 +30,7 @@
 					:tag="item.tag"
 					v-for="(item, index) in classes"
 					:key="index"
+					:selectedFilter="selectedFilter"
 				>
 				</Panel>
 			</div>
@@ -135,26 +152,48 @@
 						title: "Management",
 						tag: "GE"
 					},
-				]
+				],
+				selectedFilter: "A"
 			}
 		},
 		props: {
 		},
 		methods:{
-			toggleFilterSelection: function(event){
-				console.log(event.target.classList);
-				if(event.target.classList.contains("selected")){
-					console.log("yes")
-					var index = event.target.classList.indexOf("selected");
-					event.target.classList.splice(index,1);
-					console.log(event.target.classList);
+			checkSelected(e){
+				return e.classList.contains("selected")? true : false; 				
+			},
+			selectFilter(e){
+				e.classList.add("selected");
+			},
+			unselectFilter(e){
+				e.classList.remove("selected");
+			},
+			toggleFilterSelection: function(e){
+				if(this.checkSelected(e)){
+					this.unselectFilter(e);
 				}else{
-					console.log("no")
+					this.selectFilter(e);
 				}
+			},
+			changeFilter: function(event){
+				var filters = [...this.$refs["filter"].children];
+				if(event.target.dataset.id === this.selectedFilter){
+					return
+				}else {
+					filters.forEach((filter) => {
+						if(this.checkSelected(filter)){
+							this.toggleFilterSelection(filter)
+						}
+					});
+						
+					this.toggleFilterSelection(event.target)
+					this.selectedFilter = event.target.dataset.id;	
+				}
+				
 			}
 		},
 		created: function(){
-			//console.log(this.classes.map(x=>x.title));
+			//console.log(this.$refs["filter"]);
 		}
 	};
 </script>
@@ -168,11 +207,13 @@
 		margin: 0 auto;
 		z-index: 1;
 		padding: 10px 10px;
+		text-align: center;
 		
 		.title{
 			font-size: 2em;
 			color: #fff;
 			display: inline-block;
+			margin-top: 2rem;
 		}
 		
 		.filterBox{
@@ -180,10 +221,11 @@
 			display: flex;
 			justify-content: flex-end;
 			padding: 0 5px;
+			margin-top: 2rem;
 			
 			.filterOption{
 				border: 2px solid #fff;
-				font-size: 1.2em;
+				font-size: clamp(.5rem, 2.5vmin, 1.1rem);
 				text-align: center;
 				height: 2.9em;
 				display: inline-flex;
@@ -195,9 +237,12 @@
 				border-radius: 0.5em;
 				margin: 0 10px;
 				cursor: pointer;
+				
+				&:hover{
+					background-color: #fff;
+				}
 			}
 			.CS{
-				max-width: 6.5em;
 				color: #00b4d8;
 				&.selected{
 					border: 2px solid #fff;
@@ -206,7 +251,6 @@
 				}
 			}
 			.M{
-				max-width: 8em;
 				color: #95d5b2;
 				&.selected{
 					border: 2px solid #fff;
@@ -215,7 +259,6 @@
 				}
 			}
 			.GE{
-				max-width: 6.5em;
 				color: #ffcfd2;
 				&.selected{
 					border: 2px solid #fff;
@@ -224,7 +267,6 @@
 				}
 			}
 			.A{
-				max-width: 6em;
 				color: #fdf0d5;
 				&.selected{
 					border: 2px solid #fff;
@@ -235,13 +277,14 @@
 		}
 		
 		.panelWrapper{
-			padding: 0 20px;
-			margin: 20px 0;
+			margin: 4rem 0;
 			
 			.panels{
-				display: flex;
-				flex-wrap: wrap;	
-				justify-content: flex-start;
+				display: -ms-grid;
+				display: grid;
+				-ms-grid-columns: (minmax(13.5rem, 1fr))[auto-fit];
+				grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+				gap: 1.5rem;
 			}
 		}
 		

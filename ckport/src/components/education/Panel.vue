@@ -1,5 +1,5 @@
 <template>
-	<div class="panel">
+	<div v-show="showCard" class="panel">
 		<div class="panelContent">
 			<span>{{title}}</span>
 			<div class="tagWrapper">
@@ -36,6 +36,10 @@
 				type: String,
 				default: "A"
 			},
+			selectedFilter:{
+				type:String,
+				default: "A"
+			}
 		},
 		computed:{
 			isCS: function(){
@@ -46,6 +50,19 @@
 			},
 			isGE: function(){
 				return this.tag.includes("GE")
+			},
+			showCard(){
+				if(this.selectedFilter === "A"){
+					return true;
+				}else if(this.selectedFilter === "CS" && this.isCS){
+					return true;	
+				}else if(this.selectedFilter === "M" && this.isM){
+					return true;	
+				}else if(this.selectedFilter === "GE" && this.isGE){
+					return true;	
+				}else{
+					return false;
+				}
 			}
 		},
 		created: function(){
@@ -56,26 +73,41 @@
 
 <style lang=scss>
 	.panel{
-		margin: 0 38px;
-		margin-top: 20px;
-		width: 200px;
+		margin: auto;
+		width: 13.5rem;
 		height: 100px;
-		background-color: #2a3245;
-		padding: 8px 15px;
-		border-radius: 10px;
-		display: table;
+		background-color: #1a1a1a;
+		border-radius: 0.5rem;
+		padding: 0.4rem 0.8rem;
+		-webkit-box-shadow: 1px 1px 0.5px 0.5px rgba(255, 255, 255, 0.1);
+		box-shadow: 1px 1px 0.5px 0.5px rgba(255, 255, 255, 0.1);
+		
+		&:hover{
+			background-color: #fff;
+			
+			.panelContent{
+				span{
+					color: #000;
+				}
+				
+				.tagWrapper{
+					.tag{
+						border: 1px solid #000;
+					}
+				}
+			}
+		}
 		
 		.panelContent{
 			display: flex;
    			justify-content: space-between;
-			margin-top: 5px;
 			flex-direction: column;
 			height: 79px;
 			
 			span{
 				font-size: 1em;
 				text-align: center;
-				color: #d6ddee;
+				color: #fff;
 				display: table-cell;
 				vertical-align: middle;
 				word-break: break-word;
@@ -86,11 +118,11 @@
 				justify-content: flex-end;
 				
 				.tag{
-					border: 1px solid #fff;
-					padding: 2px 2px;
+					padding: 3px 2px 1px 2px;
 					border-radius: 5px;
+					display: flex;
+					align-items: center;
 					margin-left: 5px;
-					line-height: 13px;
 					&.cs{
 						background-color: #00b4d8;
 						color: #000;
