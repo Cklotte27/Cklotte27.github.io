@@ -47,7 +47,6 @@
 		max-width: 1440px;
 		width: 100vw;
 		margin: 0 auto;
-		z-index: 1;
 		
 		.top {
 			margin: 72px auto;

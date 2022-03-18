@@ -1,14 +1,15 @@
 <template>
 	<div class="app">
+		<Carousel></Carousel>
 		<img 
 			 src="../assets/Images/st_olaf_image_crop.jpg" 
 			 class="college_image"
-			 v-show="!$store.state.mobile"
+			 v-show="false"
 		>
 		<img 
 			 src="../assets/Images/st_olaf_image_phone.jpg" 
 			 class="college_image"
-			 v-show="$store.state.mobile"
+			 v-show="false"
 		>
 		<Top></Top>
 		<Dashboard></Dashboard>
@@ -18,11 +19,13 @@
 <script>
 	import Top from '../components/education/Top.vue';
 	import Dashboard from '../components/education/Dashboard.vue';
+	import Carousel from '../components/common/Carousel.vue';
 	export default {
 		name: 'Education',
 		components: {
 			Top,
-			Dashboard
+			Dashboard,
+			Carousel
 		},
 		props:{
 		},
