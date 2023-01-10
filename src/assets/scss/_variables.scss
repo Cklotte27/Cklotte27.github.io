@@ -1,0 +1,37 @@
+// generic color theme
+$color-generic_dark: #0d0d0d;
+$color-generic_darkblue: #024C63;
+$color-generic_blue: #007B85;
+$color-generic_deepgreen: #12AA8C;
+$color-generic_lightgreen: #87D67D;
+$color-generic_yellow: #F9F871;
+$color-generic_white: #F1FAFF;
+
+
+//text color theme
+
+$color-text_light: #DFF1FF;
+$color-text_dark: #192231;
+$color-text_gray: #454E5F;
+$color-text_gold: #DBA21C;
+$color-text_purple: #8E7797;
+
+//gradient black #192231 - gray #697284
+$gradient-header: linear-gradient(to bottom, #192231, #2c3444, #2c3444, #2c3444, #2c3444);
+
+
+//gradient black #192231 - gray #697284 - black #192231
+$gradient-nav-side: linear-gradient(to bottom, #192231, #27303f, #363e4f, #454d5e, #545d6e, #545d6e, #545d6e, #545d6e, #454d5e, #363e4f, #27303f, #192231);
+
+//gradient black #192231 - gray #697284 - ivory #C5CEE2
+
+$gradient-main-NE: linear-gradient(to left, #192231, #27303f, #363e4f, #454d5e, #545d6e, #626b7d, #70798c, #7f889b, #9099ac, #a1aabe, #b3bcd0, #c5cee2);
+$gradient-main-NW: linear-gradient(to right top, #192231, #27303f, #363e4f, #454d5e, #545d6e, #626b7d, #70798c, #7f889b, #9099ac, #a1aabe, #b3bcd0, #c5cee2);
+$gradient-main-E: linear-gradient(to right, #192231, #27303f, #363e4f, #454d5e, #545d6e, #626b7d, #70798c, #7f889b, #9099ac, #a1aabe, #b3bcd0, #c5cee2);
+$gradient-main-SE: linear-gradient(to right bottom, #192231, #27303f, #363e4f, #454d5e, #545d6e, #626b7d, #70798c, #7f889b, #9099ac, #a1aabe, #b3bcd0, #c5cee2);
+$gradient-main-S: linear-gradient(to bottom, #192231, #27303f, #363e4f, #454d5e, #545d6e, #626b7d, #70798c, #7f889b, #9099ac, #a1aabe, #b3bcd0, #c5cee2);
+$gradient-main-SW: linear-gradient(to left bottom, #192231, #27303f, #363e4f, #454d5e, #545d6e, #626b7d, #70798c, #7f889b, #9099ac, #a1aabe, #b3bcd0, #c5cee2);
+$gradient-main-W: linear-gradient(to left, #192231, #27303f, #363e4f, #454d5e, #545d6e, #626b7d, #70798c, #7f889b, #9099ac, #a1aabe, #b3bcd0, #c5cee2);
+$gradient-main-N: linear-gradient(to top, #192231, #27303f, #363e4f, #454d5e, #545d6e, #626b7d, #70798c, #7f889b, #9099ac, #a1aabe, #b3bcd0, #c5cee2);
+$gradient-main-circle: radial-gradient(circle, #192231, #27303f, #363e4f, #454d5e, #545d6e, #626b7d, #70798c, #7f889b, #9099ac, #a1aabe, #b3bcd0, #c5cee2);
+
